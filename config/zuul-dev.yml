@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: zuul
+#设置禁止配置中心的配置将客户端配置覆盖掉
+  cloud:
+    config:
+      override-none: true
+server:
+  port: 3001
+#向Eureka注册
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
+#Zuul网关API
+zuul:
+  retryable: true
+#启动Ribbon重试
+ribbon:
+  ConnectTimeout: 1000
+  ReadTimeout: 1000
+  MaxAutoRetriesNextServer: 1
+  MaxAutoRetries: 1
+#  routes:
+#    item-service: /item-service/**
+#    user-service: /user-service/**
+#    order-service: /order-service/**
+
+#设置hystrix超时时间
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 500
+#添加Hystrix监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+#可以设置 zuul 不过滤这些协议头
+#zuul:
+#  sensitive-headers:
