@@ -1,11 +1,11 @@
 spring:
   application:
     name: item-service
-#设置禁止配置中心的配置将
+#设置禁止配置中心的配置
   cloud:
     config:
       override-none: true
-# 启动参数 --server.port 可以覆盖yml配置
+# 启动参数 --server.port可以覆盖yml配置
 server:
   port: 8001
 #服务提供者向eureka注册信息

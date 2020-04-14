@@ -7,7 +7,7 @@ spring:
       override-none: true
 server:
   port: 3001
-#向Eureka注册
+#向Eureka
 eureka:
   client:
     service-url:
