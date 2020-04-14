@@ -1,7 +1,7 @@
 spring:
   application:
     name: zuul
-#设置禁止配置中心的配置将客户端配置覆盖掉
+#设置禁止配置中心的配置将客户端配置
   cloud:
     config:
       override-none: true
