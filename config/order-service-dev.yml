@@ -1,6 +1,9 @@
 spring:
   application:
     name: order-service
+  sleuth:
+    sampler:
+      probability: 0.1
 #设置禁止配置中心的配置
   cloud:
     config:

@@ -5,6 +5,9 @@ sp:
 spring:
   application:
     name: user-service
+  sleuth:
+    sampler:
+      probability: 0.1
   cloud:
     config:
       override-none: true
